@@ -1,0 +1,23 @@
+option solver MINOS;
+
+reset;
+
+model hw3.mod;
+data hw3.dat;
+solve;
+
+display m;
+display p;
+display q;
+display F;
+
+for {g in 4..12} 
+{
+	let k := g;
+	solve;
+	
+	display m;
+	display p;
+	display q;
+	display F;
+}
